@@ -1,5 +1,6 @@
 package com.example.ganesh.instagram;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -12,7 +13,6 @@ import android.view.MenuItem;
 
 import com.example.ganesh.instagram.viewpages.HomeFragment;
 import com.example.ganesh.instagram.viewpages.LikesFragment;
-import com.example.ganesh.instagram.viewpages.PostFragment;
 import com.example.ganesh.instagram.viewpages.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new SearchFragment();
                         break;
                     case R.id.action_post:
-                        fragment = new PostFragment();
+                        startActivity(new Intent(MainActivity.this, PostActivity.class));
                         break;
                     case R.id.action_like:
                         fragment = new LikesFragment();
